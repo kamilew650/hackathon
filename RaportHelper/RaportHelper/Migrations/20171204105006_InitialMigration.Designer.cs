@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
-using WebAppTrain.Models;
+using RaportHelper.Models;
 
 namespace RaportHelper.Migrations
 {

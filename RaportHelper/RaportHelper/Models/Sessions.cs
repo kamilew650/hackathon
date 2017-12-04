@@ -9,7 +9,7 @@ namespace RaportHelper.Models
     {
         public int Id { get; set; }
         public string SessionName { get; set; }
-        public Users Administrator { get; set; }
+        public string Administrator { get; set; }
         public string Token { get; set; }
         public bool Ready { get; set; }
         public DateTime Deadline { get; set; }

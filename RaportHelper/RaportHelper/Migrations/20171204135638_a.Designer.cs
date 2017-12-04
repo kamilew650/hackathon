@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using System;
 using RaportHelper.Models;
+using System;
 
 namespace RaportHelper.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20171204112838_Tables added")]
-    partial class Tablesadded
+    [Migration("20171204135638_a")]
+    partial class a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,7 +26,7 @@ namespace RaportHelper.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AdministratorId");
+                    b.Property<string>("Administrator");
 
                     b.Property<DateTime>("Deadline");
 
@@ -38,9 +38,23 @@ namespace RaportHelper.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AdministratorId");
-
                     b.ToTable("Sessions");
+                });
+
+            modelBuilder.Entity("RaportHelper.Models.StringData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Data");
+
+                    b.Property<int?>("TasksId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TasksId");
+
+                    b.ToTable("StringData");
                 });
 
             modelBuilder.Entity("RaportHelper.Models.Tasks", b =>
@@ -57,30 +71,7 @@ namespace RaportHelper.Migrations
                     b.ToTable("Tasks");
                 });
 
-            modelBuilder.Entity("RaportHelper.Models.Users", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.Property<int?>("TasksId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TasksId");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("RaportHelper.Models.Sessions", b =>
-                {
-                    b.HasOne("RaportHelper.Models.Users", "Administrator")
-                        .WithMany()
-                        .HasForeignKey("AdministratorId");
-                });
-
-            modelBuilder.Entity("RaportHelper.Models.Users", b =>
+            modelBuilder.Entity("RaportHelper.Models.StringData", b =>
                 {
                     b.HasOne("RaportHelper.Models.Tasks")
                         .WithMany("AssignedTo")

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using RaportHelper.Models;
 
-namespace WebAppTrain.Models
+namespace RaportHelper.Models
 {
     public class AppDbContext : DbContext
     {
