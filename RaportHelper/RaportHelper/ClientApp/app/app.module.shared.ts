@@ -9,6 +9,8 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewSessionComponent } from './components/newsession/newsession.component';
 
+import { ApiService } from './services/api.services'
+
 @NgModule({
     declarations: [
         AppComponent,
