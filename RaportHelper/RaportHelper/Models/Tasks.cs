@@ -11,6 +11,7 @@ namespace RaportHelper.Models
         public int SessionId { get; set; }
         public bool Ready { get; set; }
         public ICollection<StringData> AssignedTo { get; set; }
+        public string Description { get; set; }
     }
 
 }
