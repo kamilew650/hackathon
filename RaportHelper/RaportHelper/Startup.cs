@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebAppTrain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace RaportHelper
 {
@@ -23,6 +25,9 @@ namespace RaportHelper
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            string connection = @"Server=(localdb)\mssqllocaldb;Database=AppHackDb;Trusted_Connection=True;";
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
