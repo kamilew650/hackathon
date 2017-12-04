@@ -5,12 +5,9 @@ using System.Threading.Tasks;
 
 namespace RaportHelper.Models
 {
-    public class Tasks
+    public class StringData
     {
         public int Id { get; set; }
-        public int SessionId { get; set; }
-        public bool Ready { get; set; }
-        public ICollection<StringData> AssignedTo { get; set; }
+        public string Data { get; set; }
     }
-
 }

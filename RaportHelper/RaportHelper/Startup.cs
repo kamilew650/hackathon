@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WebAppTrain.Models;
+using RaportHelper.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace RaportHelper
