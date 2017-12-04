@@ -15,5 +15,8 @@ namespace RaportHelper.Models
 
         public DbSet<Sessions> Sessions { get; set; }
         public DbSet<Tasks> Tasks { get; set; }
+        public DbSet<StringData> StringData { get; set; }
+        public DbSet<Answer> Answer { get; set; }
+        public DbSet<Files> Files { get; set; }
     }
 }

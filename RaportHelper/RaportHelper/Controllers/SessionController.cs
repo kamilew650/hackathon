@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RaportHelper.Models;
+using RaportHelper.Token;
 namespace RaportHelper.Controllers
 {
     public class SessionController : Controller
@@ -25,9 +26,11 @@ namespace RaportHelper.Controllers
         }
 
         [HttpPost("api/session")]
-        public void AddSession(Sessions session)
+        public void AddSession([FromBody] string SessionName)
+
         {
-            context.Sessions.Add(session);
+            Sessions vrlNewSession = new Sessions { SessionName = SessionName, Token=TokenGenerator.GenerateToken()};
+            context.Sessions.Add(vrlNewSession);
         }
 
         [HttpGet("api/session/{SessionToken}/{IsReady}")]
